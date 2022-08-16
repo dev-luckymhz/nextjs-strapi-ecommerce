@@ -1,18 +1,18 @@
 [
 {
-  "id": 1,
+  "id": "price_1LXS3CE1IsarWMaIo5bf4iam",
   "title": "Headphone S-564L",
   "price": "65.00 $",
   "description": "Best HeadPhone on the internet !",
   "image": "image/headphones.jpg"
 },{
-  "id": 2,
+  "id": "price_1LXS4HE1IsarWMaIH2KC80eK",
   "title": "Watch Pro 5",
   "price": "125.00 $",
   "description": "Pro Watch With really cool features !",
   "image": "image/Watch pro 5.jpg"
 },{
-  "id": 3,
+  "id": "price_1LXS5wE1IsarWMaIgSH8PPiZ",
   "title": "A6-C Camera Pro",
   "price": "599.00 $",
   "description": "Best camera that can shoot 8K video at 120 FPS !",
