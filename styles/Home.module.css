@@ -70,7 +70,12 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  list-style: none;
+}
+.grid img {
+  width:  15em;
+  height: 15em;
+  object-fit: cover
 }
 
 .card {

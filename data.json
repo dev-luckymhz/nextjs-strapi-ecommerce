@@ -1,0 +1,21 @@
+[
+{
+  "id": 1,
+  "title": "Headphone S-564L",
+  "price": "65.00 $",
+  "description": "Best HeadPhone on the internet !",
+  "image": "image/headphones.jpg"
+},{
+  "id": 2,
+  "title": "Watch Pro 5",
+  "price": "125.00 $",
+  "description": "Pro Watch With really cool features !",
+  "image": "image/Watch pro 5.jpg"
+},{
+  "id": 3,
+  "title": "A6-C Camera Pro",
+  "price": "599.00 $",
+  "description": "Best camera that can shoot 8K video at 120 FPS !",
+  "image": "image/A6-C Camera Pro.jpg"
+}
+]
