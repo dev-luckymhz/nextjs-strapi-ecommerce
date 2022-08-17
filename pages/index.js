@@ -5,17 +5,35 @@ import {initCheckout} from "../services/payment";
 import {useState} from "react";
 import Image from "next/image";
 const defaultCart = {
-    product: {},
+    products: {},
 }
 export default function Home() {
     const [cart, updateCart] = useState(defaultCart);
+
+    let cartItem = Object.keys(cart.products).map(
+        key => {
+            const product = products.find(({id}) => `${id}` === `${key}`)
+            return {
+                ...cart.products[key],
+                pricePerItem: product.price
+            }
+        }
+    )
+    let  subtotal = cartItem.reduce((prev, { pricePerItem , quantity})=>{
+        let p = parseInt(pricePerItem)*parseInt(quantity)
+        return prev + p
+    }, 0)
+    let  total = cartItem.reduce((prev, {quantity})=>{
+        return prev + parseInt(quantity)
+    }, 0)
+
     function addToCart({id} = {}){
         updateCart( prevState => {
             let cartState = {...prevState}
-            if ( cartState.product[id] ){
-                    cartState.product[id].quantity +=1
+            if ( cartState.products[id] ){
+                    cartState.products[id].quantity +=1
                 } else {
-                cartState.product[id] = {
+                cartState.products[id] = {
                     id,
                     quantity: 1
                     };
@@ -24,7 +42,6 @@ export default function Home() {
             }
         )
     }
-    console.log("cart", cart)
   return (
     <div className={styles.container}>
       <Head>
@@ -38,9 +55,9 @@ export default function Home() {
           The List Of the product
         </h1>
         <p className={styles.description}>
-            <strong>Items:</strong> 0
+            <strong>Items:</strong> {total}
             <br/>
-            <strong>Total price:</strong> 0 $
+            <strong>Total price:</strong> {subtotal} $
             <br/>
             <button className={styles.button}>Check Out</button>
         </p>
