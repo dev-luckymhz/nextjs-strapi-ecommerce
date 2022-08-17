@@ -1,8 +1,30 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import products from '../data.json'
-
+import {initCheckout} from "../services/payment";
+import {useState} from "react";
+const defaultCart = {
+    product: {},
+}
 export default function Home() {
+    const [cart, updateCart] = useState(defaultCart);
+
+    function addToCart({id} = {}){
+        updateCart( prevState => {
+            let cartState = {...prevState}
+            if ( cartState.product[id] ){
+                cartState.product[id].quantity = cartState.product[id].quantity  + 1;
+                } else {
+                cartState.product[id] = {
+                    id,
+                    quantity: 1
+                    };
+                };
+            return cartState;
+            }
+        )
+    }
+    console.log(cart)
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +37,13 @@ export default function Home() {
         <h1 className={styles.title}>
           The List Of My rig
         </h1>
-
+        <p className={styles.description}>
+            <strong>Items:</strong> 0
+            <br/>
+            <strong>Total price:</strong> 0 $
+            <br/>
+            <button className={styles.button}>Check Out</button>
+        </p>
         <ul className={styles.grid}>
           { products.map( product => {
             const { title, price, description, image, id} = product;
@@ -25,6 +53,20 @@ export default function Home() {
                       <h2>{title}</h2>
                       <p>{price}</p>
                       <p>{description}</p>
+                        <hr/>
+                        <p>
+                            <button className={styles.button} onClick={() => {
+                                addToCart({id})
+                                // initCheckout(
+                                //     {lineItems: [
+                                //             {
+                                //                 price: id,
+                                //                 quantity: 1
+                                //             }
+                                //         ]}
+                                // );
+                            }}>buy now!</button>
+                        </p>
                     </li>
                 )
               }
