@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import products from '../data.json'
 import {initCheckout} from "../services/payment";
 import {useState} from "react";
+import Image from "next/image";
 const defaultCart = {
     product: {},
 }
@@ -48,7 +49,7 @@ export default function Home() {
             const { title, price, description, image, id} = product;
                 return (
                     <li className={styles.card} key={id}>
-                      <img src={image} alt={image}/>
+                      <Image src={image} width={500} height={500} alt={image}/>
                       <h2>{title}</h2>
                       <p>{price}</p>
                       <p>{description}</p>
