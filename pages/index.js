@@ -8,34 +8,33 @@ const defaultCart = {
 }
 export default function Home() {
     const [cart, updateCart] = useState(defaultCart);
-
     function addToCart({id} = {}){
         updateCart( prevState => {
             let cartState = {...prevState}
             if ( cartState.product[id] ){
-                cartState.product[id].quantity = cartState.product[id].quantity  + 1;
+                    cartState.product[id].quantity +=1
                 } else {
                 cartState.product[id] = {
                     id,
                     quantity: 1
                     };
-                };
+                }
             return cartState;
             }
         )
     }
-    console.log(cart)
+    console.log("cart", cart)
   return (
     <div className={styles.container}>
       <Head>
-        <title>Zo{"'"}s rig</title>
+        <title>E-commerce Showcase</title>
         <meta name="description" content="Egg commerce app test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          The List Of My rig
+          The List Of the product
         </h1>
         <p className={styles.description}>
             <strong>Items:</strong> 0
@@ -56,6 +55,7 @@ export default function Home() {
                         <hr/>
                         <p>
                             <button className={styles.button} onClick={() => {
+                                event.preventDefault();
                                 addToCart({id})
                                 // initCheckout(
                                 //     {lineItems: [
