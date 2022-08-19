@@ -42,6 +42,16 @@ export default function Home() {
             }
         )
     }
+    function checkout() {
+        initCheckout(
+            {lineItems:cartItem.map(item => {
+                    return {
+                        price: item.id,
+                        quantity: item.quantity
+                    }
+                })}
+        );
+    }
   return (
     <div className={styles.container}>
       <Head>
@@ -59,7 +69,7 @@ export default function Home() {
             <br/>
             <strong>Total price:</strong> {subtotal} $
             <br/>
-            <button className={styles.button}>Check Out</button>
+            <button className={styles.button} onClick={checkout}>Check Out</button>
         </p>
         <ul className={styles.grid}>
           { products.map( product => {
@@ -75,15 +85,7 @@ export default function Home() {
                             <button className={styles.button} onClick={() => {
                                 event.preventDefault();
                                 addToCart({id})
-                                // initCheckout(
-                                //     {lineItems: [
-                                //             {
-                                //                 price: id,
-                                //                 quantity: 1
-                                //             }
-                                //         ]}
-                                // );
-                            }}>buy now!</button>
+                            }}>Add To Cart!</button>
                         </p>
                     </li>
                 )
