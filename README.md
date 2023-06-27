@@ -1,5 +1,7 @@
 # Ecommerce Website
 
+<img src="./screenshoot/eggapp.png" alt="Alt Text" width="800" height="500" align="center" />
+
 This is a simple e-commerce page built using Next.js, React, and Stripe for payment processing.
 
 ## Prerequisites
