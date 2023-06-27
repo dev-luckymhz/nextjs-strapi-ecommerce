@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecommerce Website
+
+This is a simple e-commerce page built using Next.js, React, and Stripe for payment processing.
+
+## Prerequisites
+
+Make sure you have the following software installed before running the project:
+
+- Node.js (version 14 or above)
+- npm (version 6 or above)
 
 ## Getting Started
 
-First, run the development server:
+Follow the steps below to get the project up and running on your local machine:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   <pre>
+   <code>
+   git clone https://github.com/Zo-ambinintsoa/egg-app.git
+   </code>
+   </pre>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+   <pre>
+   <code>
+   cd egg-app
+   </code>
+   </pre>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. Install the dependencies:
 
-## Learn More
+   <pre>
+   <code>
+   npm install
+   </code>
+   </pre>
 
-To learn more about Next.js, take a look at the following resources:
+4. Configure Stripe:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Sign up for a Stripe account at [https://dashboard.stripe.com/register](https://dashboard.stripe.com/register).
+   - Obtain your Stripe API keys (publishable key and secret key).
+   - Update the Stripe API keys in the project's configuration file (usually located in `src/config.js`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Start the development server:
 
-## Deploy on Vercel
+   <pre>
+   <code>
+   npm run dev
+   </code>
+   </pre>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to see the e-commerce website.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Features
+
+- Browse and search for products.
+- Add products to the shopping cart.
+- View and edit the shopping cart.
+- Proceed to checkout and make a payment using Stripe.
+
+
+## Dependencies
+
+The project relies on the following dependencies:
+
+- [@stripe/stripe-js](https://www.npmjs.com/package/@stripe/stripe-js) (v1.35.0): Stripe JavaScript library for client-side integration.
+- [next](https://nextjs.org/) (v12.2.5): Framework for server-rendered React applications.
+- [react](https://reactjs.org/) (v18.2.0): JavaScript library for building user interfaces.
+- [react-dom](https://reactjs.org/docs/react-dom.html) (v18.2.0): Package provides DOM-specific methods for React.
+
+You can install these dependencies by running the following command:
+
+<pre>
+<code>
+npm install
+</code>
+</pre>
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Acknowledgements
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://reactjs.org/docs)
+- [Stripe Documentation](https://stripe.com/docs)
+
+Feel free to customize and modify the project to fit your needs. Happy coding!
+
